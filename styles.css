@@ -1,9 +1,9 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #e74c3c;
-    --accent-color: #003c88;
-    --text-color: #ecf0f1;
-    --bg-overlay: rgba(21, 19, 19, 0.786);
+    --accent-color: #ffffff;
+    --text-color: #ecedf1;
+    --bg-overlay: rgb(4, 62, 196);
     --card-bg: rgba(44, 62, 80, 0.9);
     --hover-effect: brightness(1.1);
     --transition: all 0.3s ease;
@@ -25,8 +25,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
-    background-size: cover;
+    background: #003c88;
     color: var(--text-color);
     min-height: 100vh;
     position: relative;
@@ -58,36 +57,33 @@ body {
 .header {
     margin-bottom: 2.5rem;
     animation: fadeIn 1s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.company-name {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: #003c88;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
-    letter-spacing: 1.5px;
-}
-
-.company-names {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    color: #e05c09;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 0.5rem;
-    letter-spacing: 1.5px;
+/* Estilos para el logo de la empresa */
+.header img {
+    width: 100%;
+    max-width: 400px; /* Ajusta este valor según el tamaño de tu logo */
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .company-slogan {
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 400;
-    opacity: 0.9;
+    color: white;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .section-title {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
     margin-bottom: 1.5rem;
-    color: rgb(220, 220, 220);
+    color: white;
     position: relative;
     display: inline-block;
     padding-bottom: 0.5rem;
@@ -104,7 +100,7 @@ body {
     background: var(--accent-color);
 }
 
-/* Sección de Marcas - Actualizada con tus ajustes */
+/* Sección de Marcas */
 .brands-section {
     width: 100%;
     margin-bottom: 3rem;
@@ -180,18 +176,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Ajustes adicionales para móviles pequeños */
-@media (max-width: 380px) {
-    .brand-card {
-        padding: 1rem;
-    }
-    
-    .brand-logo {
-        max-width: 90px;
-        max-height: 60px;
-    }
-}
-
+/* Sección de Enlaces */
 .links-section {
     width: 100%;
     margin-bottom: 2rem;
@@ -213,41 +198,49 @@ body {
     padding: 1rem;
     border-radius: 8px;
     text-decoration: none;
-    color: white;
+    color: #003c88;
     font-weight: 600;
     font-size: 1.1rem;
     transition: var(--transition);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: white;
 }
 
 .link-card i {
     margin-right: 1rem;
     font-size: 1.5rem;
+    color: #003c88;
 }
 
 .link-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    background: #3ba3f8;
+    color: white;
+}
+
+.link-card:hover i {
+    color: white;
 }
 
 .maps { 
-    background: #34a853;
-    background: linear-gradient(to right, #4285f4, #34a853);
+    background: white;
 }
 
 .link-card.maps:hover {
-    background: linear-gradient(to right, #34a853, #4285f4);
+    background: #3ba3f8;
     transform: translateY(-3px) scale(1.02);
 }
 
-.whatsapp { background: #25D366; }
-.facebook { background: #3b5998; }
-.instagram { background: #E1306C; }
+.whatsapp { background: white; }
+.facebook { background: white; }
+.instagram { background: white; }
 
 .footer {
     margin-top: 2rem;
     font-size: 0.9rem;
     opacity: 0.8;
+    color: white;
 }
 
 /* Animaciones */
@@ -326,7 +319,7 @@ body {
     font-size: 0.95rem;
 }
 
-/* Responsive para servicios */
+/* Media Queries */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
@@ -341,6 +334,10 @@ body {
     
     .service-image-container {
         height: 180px;
+    }
+    
+    .header img {
+        max-width: 300px;
     }
 }
 
@@ -360,9 +357,22 @@ body {
     .container {
         padding: 1.5rem;
     }
+    
+    .header img {
+        max-width: 250px;
+    }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
+    .brand-card {
+        padding: 1rem;
+    }
+    
+    .brand-logo {
+        max-width: 90px;
+        max-height: 60px;
+    }
+    
     .link-card {
         font-size: 0.85rem;
         padding: 0.6rem;
@@ -372,4 +382,9 @@ body {
         margin-right: 0.5rem;
         font-size: 1.2rem;
     }
+    
+    .header img {
+        max-width: 200px;
+    }
 }
+
